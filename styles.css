@@ -1,7 +1,8 @@
 /* ==========================================
-   CSS VARIABLES - Easy customization
+   CSS VARIABLES
    ========================================== */
 :root {
+    /* Colors */
     --primary-color: #ff6b35;
     --primary-dark: #e55a2b;
     --secondary-color: #ffa726;
@@ -414,15 +415,37 @@ section {
 .project-image {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, #ff6b35 0%, #ffa726 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-base);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
 }
 
 .project-buttons {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
 }
 
@@ -435,6 +458,7 @@ section {
     transition: all var(--transition-fast);
     font-size: 0.95rem;
     display: inline-block;
+    white-space: nowrap;
 }
 
 .btn-github {
@@ -459,24 +483,7 @@ section {
     transform: translateY(-2px);
 }
 
-.project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: var(--transition-base);
-}
-
-.project-card:hover .project-overlay {
-    opacity: 1;
-}
-
+/* Legacy support  */
 .project-link {
     color: white;
     text-decoration: none;
@@ -501,6 +508,11 @@ section {
     font-weight: 600;
     margin-bottom: 0.75rem;
     color: var(--text-primary);
+    transition: color var(--transition-fast);
+}
+
+.project-info a:hover .project-title {
+    color: var(--primary-color);
 }
 
 .project-description {
@@ -584,7 +596,7 @@ section {
     width: 0;
 }
 
-/* Animate skill bars on scroll - we'll handle this with JS */
+/* Animate skill bars on scroll */
 .skill-progress[data-progress="90"] { width: 90%; }
 .skill-progress[data-progress="85"] { width: 85%; }
 .skill-progress[data-progress="80"] { width: 80%; }
