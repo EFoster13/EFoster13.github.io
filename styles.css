@@ -419,6 +419,46 @@ section {
     overflow: hidden;
 }
 
+.project-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+    font-size: 0.95rem;
+    display: inline-block;
+}
+
+.btn-github {
+    background: transparent;
+    border: 2px solid white;
+}
+
+.btn-github:hover {
+    background: white;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+}
+
+.btn-demo {
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-demo:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
 .project-overlay {
     position: absolute;
     top: 0;
