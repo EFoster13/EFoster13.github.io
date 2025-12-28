@@ -122,7 +122,7 @@ if (heroSection) {
 // EMAILJS INITIALIZATION
 // ==========================================
 (function() {
-    emailjs.init('PLsZ3uWmPESD8O_K2'); // Replace with your public key
+    emailjs.init('PLsZ3uWmPESD8O_K2'); 
 })();
 
 // ==========================================
